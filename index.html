@@ -20,7 +20,7 @@
         .final { padding: 100px 20px; text-align: center; width: 100%; }
         #yesBtn { background: var(--primary-pink); color: white; border: none; padding: 20px 60px; border-radius: 50px; font-size: 1.3rem; font-weight: bold; cursor: pointer; box-shadow: 0 10px 25px rgba(255, 77, 109, 0.4); transition: 0.3s; }
         #yesBtn:hover { transform: scale(1.1); }
-        .video-title { color: var(--primary-pink); margin-top: 60px; text-align: center; }
+        .video-title { color: var(--primary-pink); margin-top: 60px; text-align: center; font-size: 1.5rem; }
     </style>
 </head>
 <body>
@@ -28,35 +28,37 @@
     <div class="container">
         <div class="hero" data-aos="fade-up">
             <h1>Прости меня, жаным ❤️</h1>
-            <p>Я подготовил это, чтобы ты вспомнила, как нам хорошо вместе ❤️</p>
+            <p>Я подготовил это, чтобы ты вспомнила наши лучшие моменты ❤️</p>
             <div style="margin-top: 30px; font-size: 2rem;">👇</div>
         </div>
 
         <div class="card" data-aos="fade-up">
             <img src="static/images/1.jpg">
-            <div class="card-text">Самые лучшие моменты начинаются с твоей улыбки...</div>
+            <div class="card-text">Твоя улыбка — это то, ради чего я готов на всё...</div>
         </div>
 
         <div class="card" data-aos="fade-up">
             <img src="static/images/2.jpg">
-            <div class="card-text">Ты — самое дорогое, что у меня есть.</div>
+            <div class="card-text">Каждый миг с тобой бесценен.</div>
         </div>
 
-        <h2 class="video-title" data-aos="zoom-in">Наш вальс</h2>
+        <h2 class="video-title" data-aos="zoom-in">Наш вальс 💃🕺</h2>
         <div class="card" data-aos="fade-up">
             <video controls>
+                <source src="static/images/вальс.MOV" type="video/quicktime">
                 <source src="static/images/вальс.MOV" type="video/mp4">
             </video>
         </div>
 
-        <h2 class="video-title" data-aos="zoom-in">Обнимашки</h2>
+        <h2 class="video-title" data-aos="zoom-in">Обнимашки 🤗</h2>
         <div class="card" data-aos="fade-up">
             <video controls>
+                <source src="static/images/обнимашки.MOV" type="video/quicktime">
                 <source src="static/images/обнимашки.MOV" type="video/mp4">
             </video>
         </div>
-        
-        <h2 class="video-title" data-aos="zoom-in">Обнимашки</h2>
+
+        <h2 class="video-title" data-aos="zoom-in">Самый сладкий момент ❤️</h2>
         <div class="card" data-aos="fade-up">
             <video controls>
                 <source src="static/images/3.mp4" type="video/mp4">
@@ -64,15 +66,17 @@
         </div>
 
         <div class="final" data-aos="zoom-in">
-            <h2 style="margin-bottom: 30px;">Не обижайся на меня больше. Простишь?</h2>
+            <h2 style="margin-bottom: 30px;">Ты — моё всё. Простишь меня? 🥺</h2>
             <button id="yesBtn" onclick="celebrate()">ДА, ПРОЩАЮ ❤️</button>
         </div>
     </div>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
+        // Инициализация анимации появления
         AOS.init({ duration: 1200 });
 
+        // Создание падающих сердечек
         function createHeart() {
             const heart = document.createElement('div');
             heart.innerHTML = '❤️';
@@ -85,9 +89,10 @@
         }
         setInterval(createHeart, 400);
 
+        // Действие при нажатии на кнопку
         function celebrate() {
-            alert("Спасибо, моя сладость! Я самый счастливый! Скоро буду у тебя! 🌹");
-            // Ссылка на твой ТГ, чтобы она могла сразу написать
+            alert("Я так счастлив! Спасибо тебе, родная! Жди меня с цветами 🌹");
+            // Перенаправление на твой Telegram
             window.location.href = "https://t.me/zhursin015"; 
         }
     </script>
