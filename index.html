@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Для тебя, жаным ❤️</title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        :root { --primary-pink: #ff4d6d; --soft-pink: #fff5f5; --text-gray: #444; }
+        body { background-color: var(--soft-pink); font-family: 'Arial', sans-serif; margin: 0; padding: 0; overflow-x: hidden; color: var(--text-gray); }
+        .heart { position: fixed; top: -10%; z-index: 999; user-select: none; pointer-events: none; animation: fall linear infinite; }
+        @keyframes fall { to { transform: translateY(110vh) rotate(360deg); } }
+        .container { display: flex; flex-direction: column; align-items: center; padding: 20px; }
+        .hero { height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
+        .hero h1 { color: var(--primary-pink); font-size: 2.2rem; margin-bottom: 10px; }
+        .hero p { font-style: italic; color: #888; }
+        .card { background: white; width: 100%; max-width: 450px; margin: 40px 0; border-radius: 25px; box-shadow: 0 15px 35px rgba(255, 77, 109, 0.15); overflow: hidden; border: 1px solid #ffccd5; }
+        .card img, .card video { width: 100%; display: block; }
+        .card-text { padding: 25px; text-align: center; font-size: 1.1rem; line-height: 1.6; font-style: italic; }
+        .final { padding: 100px 20px; text-align: center; width: 100%; }
+        #yesBtn { background: var(--primary-pink); color: white; border: none; padding: 20px 60px; border-radius: 50px; font-size: 1.3rem; font-weight: bold; cursor: pointer; box-shadow: 0 10px 25px rgba(255, 77, 109, 0.4); transition: 0.3s; }
+        #yesBtn:hover { transform: scale(1.1); }
+        .video-title { color: var(--primary-pink); margin-top: 60px; text-align: center; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="hero" data-aos="fade-up">
+            <h1>Прости меня, жаным ❤️</h1>
+            <p>Я подготовил это, чтобы ты вспомнила, как нам хорошо вместе ❤️</p>
+            <div style="margin-top: 30px; font-size: 2rem;">👇</div>
+        </div>
+
+        <div class="card" data-aos="fade-up">
+            <img src="static/images/1.jpg">
+            <div class="card-text">Самые лучшие моменты начинаются с твоей улыбки...</div>
+        </div>
+
+        <div class="card" data-aos="fade-up">
+            <img src="static/images/2.jpg">
+            <div class="card-text">Ты — самое дорогое, что у меня есть.</div>
+        </div>
+
+        <h2 class="video-title" data-aos="zoom-in">Наш вальс</h2>
+        <div class="card" data-aos="fade-up">
+            <video controls>
+                <source src="static/images/вальс.MOV" type="video/mp4">
+            </video>
+        </div>
+
+        <h2 class="video-title" data-aos="zoom-in">Обнимашки</h2>
+        <div class="card" data-aos="fade-up">
+            <video controls>
+                <source src="static/images/обнимашки.MOV" type="video/mp4">
+            </video>
+        </div>
+
+        <div class="final" data-aos="zoom-in">
+            <h2 style="margin-bottom: 30px;">Не обижайся на меня больше. Простишь?</h2>
+            <button id="yesBtn" onclick="celebrate()">ДА, ПРОЩАЮ ❤️</button>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 1200 });
+
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.innerHTML = '❤️';
+            heart.className = 'heart';
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDuration = Math.random() * 3 + 2 + 's';
+            heart.style.fontSize = Math.random() * 20 + 10 + 'px';
+            document.body.appendChild(heart);
+            setTimeout(() => { heart.remove(); }, 5000);
+        }
+        setInterval(createHeart, 400);
+
+        function celebrate() {
+            alert("Спасибо, моя сладость! Я самый счастливый! Скоро буду у тебя! 🌹");
+            // Ссылка на твой ТГ, чтобы она могла сразу написать
+            window.location.href = "https://t.me/zhursin015"; 
+        }
+    </script>
+</body>
+</html>
